@@ -137,4 +137,5 @@ APPEND_SLASH = False
 CORS_ALLOWED_ORIGINS = [
     env('CORS_ALLOWED_ORIGINS'),
 ]
-print(env('CORS_ALLOWED_ORIGINS'))
+
+WSGI_APPLICATION = 'vercel_app.wsgi.app'
