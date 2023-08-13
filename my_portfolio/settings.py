@@ -149,8 +149,13 @@ APPEND_SLASH = False
 # CORS_ALLOWED_ORIGINS = [
 #     env('CORS_ALLOWED_ORIGINS'),
 # ]
-CORS_ALLOWED_ORIGINS = [
-    'https://www.fabioheiji.com',
+# CORS_ALLOWED_ORIGINS = [
+#     'https://www.fabioheiji.com',
+#     'https://my-portfolio-apht.onrender.com'
+# ]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r".+",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
