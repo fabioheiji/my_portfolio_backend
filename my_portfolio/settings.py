@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+from corsheaders.defaults import default_headers
 from pathlib import Path
 import environ
 import os
@@ -146,14 +146,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 APPEND_SLASH = False
 
 
-# CORS_ALLOWED_ORIGINS = [
-#     env('CORS_ALLOWED_ORIGINS'),
-# ]
+CORS_ALLOWED_ORIGINS = [
+    env('CORS_ALLOWED_ORIGINS'),
+]
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_PRIVATE_NETWORK = True
 CSRF_TRUSTED_ORIGINS = [
     env('CORS_ALLOWED_ORIGINS'),
 ]
+
+CORS_ALLOW_HEADERS = (
+    *default_headers,
+    "accept",
+    "authorization",
+    "content-type",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
