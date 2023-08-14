@@ -4,6 +4,7 @@ from website_manager.utils import error_decorator
 from ..models import Message
 
 class ReceiveMessage(APIView):
+    
     @error_decorator
     def post(self, request):
         nameMessage = request.data.get('nameMessage')

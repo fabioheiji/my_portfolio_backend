@@ -30,10 +30,11 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = [
-    env('ALLOWED_HOSTS_0'),
-    env('ALLOWED_HOSTS_1'),
-    ]
+# ALLOWED_HOSTS = [
+#     env('ALLOWED_HOSTS_0'),
+#     env('ALLOWED_HOSTS_1'),
+#     ]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -151,28 +152,30 @@ APPEND_SLASH = False
 # ]
 # CORS_ALLOWED_ORIGINS = [
 #     'https://www.fabioheiji.com',
-#     'http://www.fabioheiji.com',
-#     'https://my-portfolio-apht.onrender.com'
+#     'www.fabioheiji.com',
+#     'fabioheiji.com',
+#     'https://my-portfolio-apht.onrender.com',
+#     'my-portfolio-apht.onrender.com',
 # ]
 # CORS_ALLOWED_ORIGINS = ['*']
 CORS_ALLOW_ALL_ORIGINS=True
-
+# CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ALLOWED_ORIGIN_REGEXES = [
 #     r".+",
 # ]
 
-CSRF_TRUSTED_ORIGINS = [
-    env('CORS_ALLOWED_ORIGINS'),
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     env('CORS_ALLOWED_ORIGINS'),
+# ]
 
-CORS_ALLOW_HEADERS = (
-    *default_headers,
-    "accept",
-    "authorization",
-    "content-type",
-    "user-agent",
-    "x-csrftoken",
-    "x-requested-with",
-)
+# CORS_ALLOW_HEADERS = (
+#     *default_headers,
+#     "accept",
+#     "authorization",
+#     "content-type",
+#     "user-agent",
+#     "x-csrftoken",
+#     "x-requested-with",
+# )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
