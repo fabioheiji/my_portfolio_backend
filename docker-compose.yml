@@ -16,7 +16,8 @@ services:
       dockerfile: Dockerfile.django    
     ports:
       - "8000:8000"
-    command: python manage.py runserver 0.0.0.0:8000
+    # command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn my_portfolio.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/code
     env_file:

@@ -34,7 +34,8 @@ DEBUG = env('DEBUG')
 #     env('ALLOWED_HOSTS_0'),
 #     env('ALLOWED_HOSTS_1'),
 #     ]
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(" ")
 
 
 # Application definition
@@ -158,6 +159,7 @@ APPEND_SLASH = False
 #     'my-portfolio-apht.onrender.com',
 # ]
 # CORS_ALLOWED_ORIGINS = ['*']
+
 CORS_ALLOW_ALL_ORIGINS=True
 # CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ALLOWED_ORIGIN_REGEXES = [
